@@ -27,34 +27,30 @@ const stateDebtData = [
     { state: "Total State Debt", debt: 83.3, gsdp: "N/A" }
 ];
 
-// Initial values (in ₹ crore for easier calculation)
-let centralDebt = 168720000; // ₹168.72 lakh crore
-let totalSpending = 47660000; // ₹47.66 lakh crore
-let goldValue = 5950000; // ₹5.95 lakh crore
-let perCitizenDebt = 121000; // ₹1.21 lakh
 
-// Daily increase estimates
-const dailyDebtIncrease = 4383; // ₹4,383 crore/day (based on fiscal deficit)
-const dailySpendingIncrease = 13057; // ₹13,057 crore/day (₹47.66 lakh crore ÷ 365)
+let centralDebt = 16900000; // Example: ₹169 lakh crore (update as needed)
+let totalSpending = 47660000;
+let goldValue = 5950000;
+let population = 1400; // in millions
+let perCitizenDebt = centralDebt / population;
+const dailyDebtIncrease = 4383;
+const dailySpendingIncrease = 13057;
 
-// Format numbers to Indian system (e.g., 1,23,45,678)
-function formatIndianNumber(value) {
-    return value.toLocaleString('en-IN', { maximumFractionDigits: 2 });
+function formatIndianNumber(value, fractionDigits = 2) {
+    return value.toLocaleString('en-IN', { maximumFractionDigits: fractionDigits });
 }
 
-// Update counters
 function updateCounters() {
-    centralDebt += dailyDebtIncrease / (24 * 3600); // Per second increase
-    totalSpending += dailySpendingIncrease / (24 * 3600); // Per second increase
-    perCitizenDebt = centralDebt / 1400; // Per million population (1.4 billion)
+    centralDebt += dailyDebtIncrease / (24 * 3600);
+    totalSpending += dailySpendingIncrease / (24 * 3600);
+    perCitizenDebt = centralDebt / 1400;
 
-    document.getElementById('central-debt').textContent = `₹${formatIndianNumber(centralDebt / 100000)} lakh crore`;
-    document.getElementById('per-citizen-debt').textContent = `${formatIndianNumber(perCitizenDebt / 1000)} lakh`;
-    document.getElementById('total-spending').textContent = `₹${formatIndianNumber(totalSpending / 100000)} lakh crore`;
-    document.getElementById('gold-value').textContent = `₹${formatIndianNumber(goldValue / 100000)} lakh crore`;
+    document.getElementById('central-debt').textContent = `₹${formatIndianNumber(centralDebt / 100000, 4)} lakh crore`;
+    document.getElementById('per-citizen-debt').textContent = `₹${formatIndianNumber(perCitizenDebt / 1000, 4)} lakh`;
+    document.getElementById('total-spending').textContent = `₹${formatIndianNumber(totalSpending / 100000, 4)} lakh crore`;
+    document.getElementById('gold-value').textContent = `₹${formatIndianNumber(goldValue / 100000, 2)} lakh crore`;
 }
 
-// Populate state debt table
 function populateStateDebtTable() {
     const tbody = document.getElementById('state-debt-body');
     stateDebtData.forEach(data => {
@@ -68,9 +64,23 @@ function populateStateDebtTable() {
     });
 }
 
+// Mode Toggle Functionality
+document.getElementById('mode-toggle').addEventListener('click', () => {
+    const body = document.body;
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        document.getElementById('mode-toggle').textContent = 'Toggle Dark Mode';
+    } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        document.getElementById('mode-toggle').textContent = 'Toggle Light Mode';
+    }
+});
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     populateStateDebtTable();
     updateCounters();
-    setInterval(updateCounters, 1000); // Update every second
+    setInterval(updateCounters, 1000);
 });
