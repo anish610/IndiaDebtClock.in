@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Debt Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>India Debt Clock</h1>
+        <div class="dashboard">
+            <div class="section">
+                <h2>Central Government Debt</h2>
+                <div class="counter" id="central-debt">₹168.72 lakh crore</div>
+                <div class="sub-counter">Per Citizen: ₹<span id="per-citizen-debt">1.21 lakh</span></div>
+                <div class="sub-counter">Debt-to-GDP: <span id="debt-to-gdp">81.68%</span></div>
+            </div>
+            <div class="section">
+                <h2>Government Spending (2024-25)</h2>
+                <div class="counter" id="total-spending">₹47.66 lakh crore</div>
+                <div class="sub-counter">Capital Expenditure: ₹<span id="capital-expenditure">11.11 lakh crore</span></div>
+            </div>
+            <div class="section">
+                <h2>Gold Reserves</h2>
+                <div class="counter" id="gold-value">₹5.95 lakh crore</div>
+                <div class="sub-counter">Tonnes: <span id="gold-tonnes">879.60</span></div>
+            </div>
+            <div class="section">
+                <h2>Other Metrics</h2>
+                <div class="sub-counter">Ministries: <span id="ministries">58</span></div>
+                <div class="sub-counter">Government Employees: <span id="employees">48.67 lakh</span></div>
+                <div class="sub-counter">IAS Employees: <span id="ias-employees">5,205</span></div>
+                <div class="sub-counter">Freebie Schemes: <span id="freebie-schemes">~20</span></div>
+            </div>
+            <div class="section">
+                <h2>State Government Debt (2024)</h2>
+                <table id="state-debt-table">
+                    <thead>
+                        <tr>
+                            <th>State/UT</th>
+                            <th>Debt (₹ lakh crore)</th>
+                            <th>Debt-to-GSDP (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="state-debt-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <footer>
+            <p>Data sourced from RBI, Ministry of Finance, Business Today, and others. Last updated: June 2025.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
