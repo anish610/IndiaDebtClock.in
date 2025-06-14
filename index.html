@@ -1,56 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="15">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India Debt Clock</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom style for Bitcoin symbol */
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>India Debt Clock</h1>
-        <button id="mode-toggle">Toggle Light Mode</button>
-        <div class="dashboard">
-            <div class="section metrics">
-                <h2>Central Government Debt</h2>
-                <div class="counter" id="central-debt">₹168.72 lakh crore</div>
-                <div class="sub-counter">Per Citizen: ₹<span id="per-citizen-debt">1.21 lakh</span></div>
-                <div class="sub-counter">Debt-to-GDP: <span id="debt-to-gdp">81.68%</span></div>
+    <div class="flex items-center">
+        <img id="logo" src="Images/IndiaDebtClock.jpg" alt="India Debt Clock Logo" class="w-20 h-auto mr-3">
+        <h2 class="text-2xl font-semibold">India Debt Clock</h2>
+    </div>
+    <hr class="my-1 border-black">
+    <section class="w-fit min-w-[50px] mx-auto pl-1 pr-1 bg-white border border-black rounded-lg  m-4 sm:m-4">
+        <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold text-gray-800 mb-1 pt-1">Indian Government Debt</h2>
+            <button id="infoBtn" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none">?</button>
+        </div>
+        <div id="infoSection" class="hidden bg-white-100 border border-white-300 rounded p-3 my-2">
+            <span id="infoText" class="text-gray-700"></span>
+        </div>
+
+        <div class="flex flex-col gap-y-1 text-s">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                <span class=t ext-black-600 ">Total Public Debt:</span>
+                <span class=" font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4 ">
+         ₹ 18.36 Lakh Cr
+      </span>
             </div>
-            <div class="section metrics">
-                <h2>Government Spending (2024-25)</h2>
-                <div class="counter" id="total-spending">₹47.66 lakh crore</div>
-                <div class="sub-counter">Capital Expenditure: ₹<span id="capital-expenditure">11.11 lakh crore</span></div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between ">
+                <span class=" text-black-600 ">Debt per India citizen (146 Cr):</span>
+                <span class=" font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4 ">
+        ₹ 1.27 lakh 
+                </span>
             </div>
-            <div class="section metrics">
-                <h2>Gold Reserves</h2>
-                <div class="counter" id="gold-value">₹5.95 lakh crore</div>
-                <div class="sub-counter">Tonnes: <span id="gold-tonnes">879.60</span></div>
-            </div>
-            <div class="section metrics">
-                <h2>Other Metrics</h2>
-                <div class="sub-counter">Ministries: <span id="ministries">58</span></div>
-                <div class="sub-counter">Government Employees: <span id="employees">48.67 lakh</span></div>
-            </div>
-            <div class="section table-section">
-                <h2>State Government Debt (2024)</h2>
-                <table id="state-debt-table">
-                    <thead>
-                        <tr>
-                            <th>State/UT</th>
-                            <th>Debt (₹ lakh crore)</th>
-                            <th>Debt-to-GSDP (%)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="state-debt-body"></tbody>
-                </table>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between ">
+                <span class=" text-black-600 ">Debt per Taxpayer (10.4 Cr):</span>
+                <span class=" font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4 ">
+        ₹ 21.6 lakh
+      </span>
             </div>
         </div>
-        <footer>
-            <p>Data sourced from RBI, Ministry of Finance, Business Today, and others. Last updated: June 2025.</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+    </section>
+
+
+    <section class="w-fit min-w-[200px] mx-auto pl-1 pr-1 bg-white border border-black rounded-lg m-4 sm:m-4 ">
+        <h2 class="text-lg font-semibold text-gray-800 mb-1 pt-1 ">Assets</h2>
+        <div class="flex flex-col gap-y-1 ">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between ">
+                <span class=" text-black-600 ">Gold Reserves:</span>
+                <span class=" font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4 ">
+        853.63 tons (₹4,76,000 Cr)
+      </span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between ">
+                <span class=" text-black-600 ">Bitcoin Strategic Reserve</span>
+                <span class=" font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4 ">
+        0 BTC (₹ 0 ) 
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    <script>
+        const infoBtn = document.getElementById('infoBtn');
+        const infoSection = document.getElementById('infoSection');
+        const infoText = document.getElementById('infoText');
+        let expanded = false;
+
+        infoBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            if (expanded) {
+                infoSection.classList.remove('hidden');
+                infoText.textContent = "This section provides additional information about the Indian Government Debt, including its components and implications. ";
+            } else {
+                infoSection.classList.add('hidden');
+                infoText.textContent = " ";
+            }
+        });
+    </script>
 </body>
+
 </html>
