@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -8,72 +8,183 @@
     <title>India Debt Clock</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
     <style>
         /* Custom style for Bitcoin symbol */
     </style>
 </head>
 
-<body>
-    <div class="flex items-center">
-        <img id="logo" src="Images/IndiaDebtClock.jpg" alt="India Debt Clock Logo" class="w-20 h-auto mr-3">
-        <h2 class="text-2xl font-semibold">India Debt Clock</h2>
-    </div>
-    <hr class="my-1 border-black">
-    <section class="max-w-sm w-full mx-auto pl-1 pr-1 bg-white border border-black rounded-lg m-4 sm:m-4">
-        <div class="flex justify-between items-center">
-            <h2 class="text-lg font-semibold text-gray-800 mb-1 pt-1">Indian Government Debt</h2>
-            <button id="infoBtn" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none">?</button>
-        </div>
-        <div id="infoSection" class="hidden bg-white-100 border border-white-300 rounded p-3 my-2 max-w-sm break-words">
-            <span id="infoText" class="text-gray-700"></span>
-        </div>
-        <div class="flex flex-col gap-y-1 text-s">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <span class="text-black-600">Total Public Debt:</span>
-                <span class="font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4">
-                    ₹ 181.74 Lakh Cr
-                </span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <span class="text-black-600">Debt per India citizen (146 Cr):</span>
-                <span class="font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4">
-                    ₹ 1.27 lakh
-                </span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <span class="text-black-600">Debt per Taxpayer (10.4 Cr):</span>
-                <span class="font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4">
-                    ₹ 17.47 lakh
-                </span>
-            </div>
-        </div>
-    </section>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 z-20 flex items-center justify-start py-4 pl-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 border-b border-gray-300 dark:border-gray-700">
+        <img id="logo" src="Images/IndiaDebtClock.jpg" alt="India Debt Clock Logo" class="w-20 h-auto mr-3" />
+        <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">India Debt Clock</h1>
+    </header>
 
-    <section class="max-w-sm w-full mx-auto pl-1 pr-1 bg-white border border-black rounded-lg m-4 sm:m-4">
-        <div class="flex justify-between items-center">
-            <h2 class="text-lg font-semibold text-gray-800 mb-1 pt-1">Assets</h2>
-            <button id="assetInfoBtn" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none">?</button>
+    <!-- Main Content Wrapper -->
+    <main class="flex-1 overflow-y-auto pt-4 pb-40">
+        <div class="flex flex-row flex-wrap gap-4 items-start justify-start w-full pl-4">
+            <!-- Debt Section -->
+            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
+                <div class="flex items-start">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Indian Government Debt
+                    </h2>
+                    <button id="infoBtn" type="button" aria-expanded="false" aria-controls="infoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
+                </div>
+                <div id="infoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
+                    <span id="infoText" class="text-gray-700 dark:text-gray-200"></span>
+                </div>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Total Public Debt:</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            ₹ 181.74 Lakh Cr
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Debt per India citizen (146 Cr):</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            ₹ 1.27 lakh
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Debt per Taxpayer (10.4 Cr):</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            ₹ 17.47 lakh
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assets Section -->
+            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
+                <div class="flex items-start">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Assets</h2>
+                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
+                </div>
+                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
+                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
+                </div>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            853.63 tons (₹4,76,000 Cr)
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            853.63 tons (₹4,76,000 Cr)
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            853.63 tons (₹4,76,000 Cr)
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            0 BTC (₹ 0 )
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assets Section -->
+            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
+                <div class="flex items-start">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Assets</h2>
+                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
+                </div>
+                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
+                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
+                </div>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            853.63 tons (₹4,76,000 Cr)
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            0 BTC (₹ 0 )
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assets Section -->
+            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
+                <div class="flex items-start">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Assets</h2>
+                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
+                </div>
+                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
+                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
+                </div>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            853.63 tons (₹4,76,000 Cr)
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            0 BTC (₹ 0 )
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assets Section -->
+            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
+                <div class="flex items-start">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Assets</h2>
+                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
+                </div>
+                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
+                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
+                </div>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            853.63 tons (₹4,76,000 Cr)
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
+                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
+                            0 BTC (₹ 0 )
+                        </span>
+                    </div>
+                </div>
+            </section>
+
         </div>
-        <div id="assetInfoSection" class="hidden bg-white-100 border border-white-300 rounded p-3 my-2 max-w-sm break-words">
-            <span id="assetInfoText" class="text-gray-700"></span>
-        </div>
-        <div class="flex flex-col gap-y-1 text-s">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <span class="text-black-600">Gold Reserves:</span>
-                <span class="font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4">
-                    853.63 tons (₹4,76,000 Cr)
-                </span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <span class="text-black-600">Bitcoin Strategic Reserve</span>
-                <span class="font-semibold text-gray-800 hover:text-red-600 focus:text-red-600 transition-colors sm:ml-4">
-                    0 BTC (₹ 0 )
-                </span>
-            </div>
-        </div>
-    </section>
+    </main>
+
+    <!-- Sticky Footer -->
+    <footer class="sticky bottom-0 z-20 flex justify-end items-center w-full px-4 py-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700 transition-colors duration-300">
+        <button id="toggleDark" class="px-2 py-1 rounded text-xs bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border border-gray-400 dark:border-gray-600 transition-colors duration-200">
+            Toggle Dark/Light Mode
+        </button>
+    </footer>
 
     <script>
+        // Info toggle for Debt section
         const infoBtn = document.getElementById('infoBtn');
         const infoSection = document.getElementById('infoSection');
         const infoText = document.getElementById('infoText');
@@ -81,15 +192,14 @@
 
         infoBtn.addEventListener('click', () => {
             expanded = !expanded;
-            if (expanded) {
-                infoSection.classList.remove('hidden');
-                infoText.textContent = "This section provides additional information about the Indian Government Debt, including its components and implications. ";
-            } else {
-                infoSection.classList.add('hidden');
-                infoText.textContent = " ";
-            }
+            infoSection.classList.toggle('hidden', !expanded);
+            infoBtn.setAttribute('aria-expanded', expanded);
+            infoText.textContent = expanded ?
+                "This section provides additional information about the Indian Government Debt, including its components and implications." :
+                "";
         });
 
+        // Info toggle for Assets section
         const assetInfoBtn = document.getElementById('assetInfoBtn');
         const assetInfoSection = document.getElementById('assetInfoSection');
         const assetInfoText = document.getElementById('assetInfoText');
@@ -97,13 +207,17 @@
 
         assetInfoBtn.addEventListener('click', () => {
             assetExpanded = !assetExpanded;
-            if (assetExpanded) {
-                assetInfoSection.classList.remove('hidden');
-                assetInfoText.textContent = "This section provides additional information about India's assets, such as gold reserves and strategic Bitcoin holdings.";
-            } else {
-                assetInfoSection.classList.add('hidden');
-                assetInfoText.textContent = "";
-            }
+            assetInfoSection.classList.toggle('hidden', !assetExpanded);
+            assetInfoBtn.setAttribute('aria-expanded', assetExpanded);
+            assetInfoText.textContent = assetExpanded ?
+                "This section provides additional information about India's assets, such as gold reserves and strategic Bitcoin holdings." :
+                "";
+        });
+
+        // Dark/Light mode toggle
+        const toggleDark = document.getElementById('toggleDark');
+        toggleDark.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
         });
     </script>
 </body>
