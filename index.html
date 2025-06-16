@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="15">
+    <!-- <meta http-equiv="refresh" content="15">  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India Debt Clock</title>
     <!-- Tailwind CSS CDN -->
@@ -26,7 +26,7 @@
     </header>
 
     <!-- Main Content Wrapper -->
-    <main class="flex-1 overflow-y-auto pt-4 pb-40">
+    <main class="flex-auto overflow-y-auto pt-4 pb-40">
         <div class="flex flex-row flex-wrap gap-4 items-start justify-start w-full pl-4">
             <!-- Debt Section -->
             <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
@@ -78,18 +78,6 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            853.63 tons (₹4,76,000 Cr)
-                        </span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            853.63 tons (₹4,76,000 Cr)
-                        </span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
                         <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
                         <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
                             0 BTC (₹ 0 )
@@ -98,80 +86,7 @@
                 </div>
             </section>
 
-            <!-- Assets Section -->
-            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
-                <div class="flex items-start">
-                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Assets</h2>
-                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
-                </div>
-                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
-                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
-                </div>
-                <div class="flex flex-col gap-y-1 text-sm">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            853.63 tons (₹4,76,000 Cr)
-                        </span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            0 BTC (₹ 0 )
-                        </span>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Assets Section -->
-            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
-                <div class="flex items-start">
-                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Assets</h2>
-                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
-                </div>
-                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
-                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
-                </div>
-                <div class="flex flex-col gap-y-1 text-sm">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            853.63 tons (₹4,76,000 Cr)
-                        </span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            0 BTC (₹ 0 )
-                        </span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Assets Section -->
-            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
-                <div class="flex items-start">
-                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">Assets</h2>
-                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
-                </div>
-                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
-                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
-                </div>
-                <div class="flex flex-col gap-y-1 text-sm">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Gold Reserves:</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            853.63 tons (₹4,76,000 Cr)
-                        </span>
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <span class="text-black-600 dark:text-gray-200">Bitcoin Strategic Reserve</span>
-                        <span class="font-semibold text-gray-800 dark:text-gray-100 hover:text-red-600 dark:hover:text-red-400 transition-colors sm:ml-4">
-                            0 BTC (₹ 0 )
-                        </span>
-                    </div>
-                </div>
-            </section>
 
         </div>
     </main>
