@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="refresh" content="15">  -->
+    <meta http-equiv="refresh" content="20">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India Debt Clock</title>
     <!-- Tailwind CSS CDN -->
@@ -85,6 +85,108 @@
                     </div>
                 </div>
             </section>
+
+            <!-- RBI Repo Rate -->
+            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
+                <div class="flex items-start">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">RBI Repo Rate</h2>
+                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
+                </div>
+                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
+                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
+                </div>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                        <table border="1" cellpadding="6" cellspacing="0" class="text-white">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Repo Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Oct-24</td>
+                                    <td>6.50%</td>
+                                </tr>
+                                <tr>
+                                    <td>Dec-24</td>
+                                    <td>6.50%</td>
+                                </tr>
+                                <tr>
+                                    <td>Feb-25</td>
+                                    <td>6.25%</td>
+                                </tr>
+                                <tr>
+                                    <td>Apr-25</td>
+                                    <td>6.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun-25</td>
+                                    <td>5.50%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- RBI Repo Rate -->
+            <section class="w-full max-w-sm px-2 bg-white dark:bg-gray-800 border border-black dark:border-gray-700 rounded-lg">
+                <div class="flex items-start">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1 pt-1">India CPI Inflation (Annual Average) – Last 5 Years</h2>
+                    <button id="assetInfoBtn" type="button" aria-expanded="false" aria-controls="assetInfoSection" class="text-lg font-semibold text-orange-400 mb-1 pt-1 focus:outline-none ml-auto" title="Show info">?</button>
+                </div>
+                <div id="assetInfoSection" class="hidden bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded p-3 my-2 w-full break-words transition-all duration-200">
+                    <span id="assetInfoText" class="text-gray-700 dark:text-gray-200"></span>
+                </div>
+                <div class="flex flex-col gap-y-1 text-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+
+
+                        <table border="1" cellpadding="6" cellspacing="0" class="text-white">
+
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Inflation Rate (CPI)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2020</td>
+                                    <td>~6.20%</td>
+                                </tr>
+                                <tr>
+                                    <td>2021</td>
+                                    <td>5.13%</td>
+                                </tr>
+                                <tr>
+                                    <td>2022</td>
+                                    <td>6.70%</td>
+                                </tr>
+                                <tr>
+                                    <td>2023</td>
+                                    <td>5.65%</td>
+                                </tr>
+                                <tr>
+                                    <td>2024</td>
+                                    <td>4.95%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+
 
 
 
